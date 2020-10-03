@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>jikoshoukai</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!----------------------------Intro Words----------------------------->  
+    <h1>Yeateeのホームページへようこそ！</h1>
+    <p id="introduction">私の自己紹介ページへのご訪問、どうもありがとうございます！<br>
+    このページは私の人生のタイムラインを形相したものでございます。<br><br>
+  　<b>ぜひ、下のタイムをクリックしてお願いいたします！</b></p>
+
+    <!--------------------------Timelines(links)--------------------------> 
+    <div id="grid">
+
+      <div id="past" class='gridElements'>
+        <div class="words">
+          <h4>過去</h4>
+          経歴事項
+        </div>
+        <div style="height: 35px;"></div>
+        <div class="arrow"></div>
+
+        
+      </div>
+
+      <div id="present" class='gridElements'>
+        <div class="words">
+          <h4>現在</h4>
+          教育、趣味などのライフスタイル
+        </div>
+        
+        <!---------------------------Walking Man--------------------------> 
+
+        <div id="mainBody" class="body">
+          
+          <div id="arm1" class="body arm_and_leg"></div>
+          <div id="arm2" class="body arm_and_leg"></div>
+          <div id="head" class="body">
+            <div class="lightFlex">
+              <div class="lights"></div>
+              <div class="lights"></div>
+              <div class="lights"></div>
+            </div>
+          </div>
+          <div id="leg1" class="body arm_and_leg"></div>
+          <div id="leg2" class="body arm_and_leg"></div>
+        </div>
+
+        <div class="arrow"></div>
+      </div>
+
+      <div id="future" class='gridElements'>
+        <div class="words">
+          <h4>未来</h4>
+          キャリアの目標
+        </div>
+        <div style="height: 35px;"></div>
+        <div class="arrow"></div>
+      </div>
+
+    </div>
+
+    <!---------------------------Modal Contents-------------------------->
+    <!--Main Reference is: https://www.w3schools.com/howto/howto_css_modals.asp-->
+
+    <div id="pastModal" class = "modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>経歴事項</h2>
+        <p>
+          <strong>芮成周(イェ　ソンジュ)</strong><br><br>
+          韓国の釜山(Busan)出生。ソウル大学哲学科卒業。数学を第二専攻として修学。
+          軍隊（海軍調理兵）とバイトの経験から顧客向けの仕事を志望。同大学の大学院で統計学を専攻して
+          顧客のデーターを扱うことに最初は関心をもつ。しかし今はユーザにもっと近くになれる仕事として
+          ウェブフロントエンドエンジニアを目指す。いつか大学で学んだ機械学習の知識をフロントエンドへ
+          応用することを計画。<br><br>
+          もっと詳しい情報はこちの私の<font size="5"><a href="cv.pdf" target="_blank" style="color:blue">CV</a></font>を参考してください.
+        </p>
+      </div>
+    </div>
+
+    <div id="presentModal" class = "modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>教育事項</h2>
+        <p>
+          <h4>コンピュータ関連</h4>
+          <ul>
+            <li>フロントエンド基礎：HTML, CSS, Javascript</li>
+            <li>フロントエンドライブラリ：React.js</li>
+            <li>以降の計画：可能ならVue.js, Angular.js,そしてTypescriptの学習</li>
+          </ul>
+          <h4>学業関連</h4>
+          <ul>
+            <li>統計学基礎教養の助教担当(Pythonの活用による統計学データの分析)</li>
+            <li>Healthcareプロジェクト(バンディットアルゴリズムの応用)</li>
+          </ul>
+        <h2>趣味</h2>
+        定期的の筋肉トレイニング、日本ドラマ視聴(最近、”半沢直樹”に夢中になっております)          
+        </p>
+      </div>
+    </div>
+
+    <div id="futureModal" class = "modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>キャリアのゴール</h2>
+        <p>私は基本的にお客様に癒される経験を提供することを目指してこのフロントエンドの仕事を選択しました。
+          オンラインの空間にユーザとして最初に供給者に出会うのはウェブページの画面です。それから大体のサービスへの印象が
+          形成せれます。つまり、あの会社の顔と言われても過言ではありません。ですから、私はユーザに最高の経験を与えるために
+          洗練な形のページを表ししたいです。<br><br>
+          もっと開発経歴が積まれた以降は多様な技術を活用するつもりです。例えば機械学習や3Dビジョン、アニメイションなどの技術を使い、
+          ウェブ上のリアリティを具現したいです。
+        </p>
+      </div>
+    </div>
+
+    <!---------------------------Bottom Comment--------------------------->
+
+    <p>
+      <ul id="bottom">
+        <li>このページはHTML, CSS, そしてJavascriptのみで作成されました。</li>
+        <li>Email: econometrics4girls@gmail.com</li>
+      </ul>
+    </p>
+
+    <!---------------------------Javascript Code-------------------------->
+
+    <script>
+      /*---------------------------CSS Effect----------------------------*/
+      const gridElements = document.querySelectorAll(".gridElements");
+      const arrows = document.querySelectorAll(".arrow");
+      const arm1 = document.querySelector("#arm1");
+      const arm2 = document.querySelector("#arm2");
+      const lights = document.querySelectorAll(".lights");
+      
+      for (let i = 0; i < gridElements.length; i++){
+        
+        gridElements[i].addEventListener('mouseenter', e => {
+          gridElements[i].style.fontWeight = "bold";
+          arrows[i].style.backgroundColor = "blue";
+        })
+
+        gridElements[i].addEventListener('mouseleave', e => {
+          gridElements[i].style.fontWeight = "normal";
+          arrows[i].style.backgroundColor = "skyblue";
+        })
+      }
+
+      gridElements[1].addEventListener('mouseenter', e => {
+        arm1.style.transform = "rotate(120deg)";
+        arm2.style.transform = "rotate(-120deg)";
+        for (let i = 0; i < lights.length; i++){
+          lights[i].style.display = "block";
+        }
+      })
+
+      gridElements[1].addEventListener('mouseleave', e => {
+        arm1.style.transform = "rotate(40deg)";
+        arm2.style.transform = "rotate(-40deg)";
+        for (let i = 0; i < lights.length; i++){
+          lights[i].style.display = "none";
+        }
+      })
+
+      const past = document.querySelector("#past");
+      const present = document.querySelector("#present");
+      const pastModal = document.querySelector("#pastModal");
+      const presentModal = document.querySelector("#presentModal");
+      const futureModal = document.querySelector("#futureModal");
+      const future = document.querySelector("#future");
+      const timeline = [past, present, future]
+      const timelineModal = [pastModal, presentModal, futureModal];
+      const close = document.querySelectorAll(".close");
+      
+      /*---------------------------Links(Modal)----------------------------*/
+
+      for (let i = 0; i < close.length; i++){
+        timeline[i].onclick = function(){
+          timelineModal[i].style.visibility = "visible"
+          timelineModal[i].style.opacity = "1";
+
+        }
+        close[i].onclick = function(){
+          timelineModal[i].style.visibility = "hidden";
+          timelineModal[i].style.opacity = "0";
+        }
+      }
+
+
+
+    </script> 
+  </body>
+
+</html>

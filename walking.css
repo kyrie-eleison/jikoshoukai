@@ -1,0 +1,225 @@
+body{
+    background-color: black;
+}
+
+/* ------------------------------arrow------------------------------ */
+
+@keyframes arrowMoving{
+    0%{opacity: 0; right:150%;}
+    10%{opacity: 1; right:100%;}
+    30%{right:70%;}
+    60%{right:30%;}
+    90%{right:20%;}
+    100%{opacity: 0;}
+}
+
+#arrow{
+    position: relative;
+    background-color: #F0F8FF;
+  
+    width: 150%;
+    height: 40px;
+
+    top: 22px;
+
+    animation: arrowMoving 3s linear 0s;
+  
+
+  }
+  
+  #arrow::after{
+    position: absolute;
+    content: "";
+    
+    transform: translateY(-15px);
+    right: -50px;
+  
+    border-top: 35px solid transparent;
+    border-left: 70px solid #F0F8FF;
+    border-bottom: 35px solid transparent;
+    
+  }
+
+  /* ----------------------------walkingMan---------------------------- */
+
+  @keyframes body_and_headMove{
+    0%{left:0%; opacity: 0;}
+    25%{opacity: 1;}
+    100%{left:100%; opacity: 0;}
+  }
+  
+  @keyframes arm1Move{
+    0%{
+      opacity: 0;
+      transform-origin: top;
+      transform: rotate(40deg)}
+    25%{
+      opacity: 1;
+      transform: rotate(-40deg)}
+    50%{
+      transform: rotate(40deg)}
+    75%{
+      transform: rotate(-40deg)}  
+    100%{
+      opacity: 0;
+      transform: rotate(40deg)}
+  }
+  
+  @keyframes arm2Move{
+    0%{
+      opacity: 0;
+      transform-origin: top;
+      transform: rotate(-40deg)}
+    25%{
+      opacity: 1;
+      transform: rotate(40deg)}
+    50%{
+      transform: rotate(-40deg)}
+    75%{
+      transform: rotate(40deg)}  
+    100%{
+      opacity: 0;
+      transform: rotate(-40deg)}
+  }
+  
+  @keyframes leg1Move{
+    0%{
+      opacity: 0;
+      transform-origin: top;
+      transform: rotate(30deg)}
+    25%{
+      opacity: 1;
+      transform: rotate(-30deg)}
+    50%{
+      transform: rotate(30deg)}
+    75%{
+      transform: rotate(-30deg)}  
+    100%{
+      opacity: 0;
+      transform: rotate(30deg)}
+  }
+  
+  @keyframes leg2Move{
+    0%{
+      opacity: 0;
+      transform-origin: top;
+      transform: rotate(-30deg)}
+    25%{
+      opacity: 1;
+      transform: rotate(30deg)}
+    50%{
+      transform: rotate(-30deg)}
+    75%{
+      transform: rotate(30deg)}  
+    100%{
+      opacity: 0;
+      transform: rotate(-30deg)}
+  }
+  
+  .body{
+    background-color: #1E90FF;
+  }
+  
+  .arm_and_leg{
+    position: absolute;
+  
+    width: 8px;
+    height: 30px;
+    border-radius: 0% 0% 35% 35%;
+  }
+  
+  #mainBody{
+    position: relative;
+  
+    width: 20px;
+    height: 35px;
+    border-radius: 35%;
+   
+    left: 30px;
+    margin-top: 25%;
+    
+    animation: body_and_headMove 3s linear;
+  }
+  
+  #head{
+    position: absolute;
+  
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  
+    top: -14px;
+  }
+  
+  #arm1{
+    top: 8px;
+    left: 6px;
+    transform: rotate(40deg);
+  
+    animation: arm1Move 3s linear;
+  }
+  
+  #arm2{
+    top: 8px;
+    right: 6px;
+    transform: rotate(-40deg);
+  
+    animation: arm2Move 3s linear;
+  }
+  
+  #leg1{
+    top: 25px;
+    left: 6px;
+    transform: rotate(30deg);
+  
+    animation: leg1Move 3s linear;
+  }
+  
+  #leg2{
+    top: 25px;
+    right: 6px;
+    transform: rotate(-30deg);
+  
+    animation: leg2Move 3s linear;
+  }
+
+  /* ----------------------------timeTexts---------------------------- */
+  #timeline{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  
+    grid-column-gap: 20px;
+    padding: 40px;
+  }
+  
+  .timelineElement{
+    text-align: center;
+    font-size: 40px;
+    background-color: black; 
+    
+    padding-top: 25%;
+    padding-bottom: 25%;
+    margin: 20px;
+  }
+  
+  @keyframes timeMove{
+    0% {color: black;}
+    50% {color: white;}
+    100% {color: black;}
+  }
+  
+  #past{
+    
+    animation: timeMove 1s linear 0s;
+    animation-delay: 0s;
+  }
+  
+  #present{
+    animation: timeMove 1s linear 0s;
+    animation-delay: 0.7s;
+  }
+  
+  #future{
+    animation: timeMove 1s linear 0s;
+    animation-delay: 1.4s;
+  }
